@@ -310,7 +310,7 @@ const paymentStripe = async (req, res) => {
         }]
 
         const session = await stripeInstance.checkout.sessions.create({
-            success_url: `${origin}/verify?success=true&appointmentId=${appointmentData._id}`,
+            success_url: 'https://prescripto-gamma.vercel.app/',
             cancel_url: `${origin}/verify?success=false&appointmentId=${appointmentData._id}`,
             line_items: line_items,
             mode: 'payment',
